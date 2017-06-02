@@ -1,0 +1,42 @@
+<div class="card-content">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<%=form_for :plan, url: student_plans_path do|f|%>
+			<div class="form-group label-floating">
+				<label class="control-label">Amount</label>
+				<%= f.number_field :amount, autofocus: true, class: "form-control" %> use (6000)
+				<span class="material-input"></span>
+			</div>
+
+			<div class="form-group label-floating">
+				<label class="control-label">Interval</label>
+				<%= f.text_field :interval, autofocus: true, class: "form-control" %>use (day,week,month,year)
+				<span class="material-input"></span>
+			</div>
+
+			<div class="form-group label-floating">
+				<label class="control-label">Plan Name</label>
+				<%= f.text_field :name, autofocus: true, class: "form-control" %>use (silver) 
+				<span class="material-input"></span>
+			</div>
+
+			<div class="form-group label-floating">
+				<label class="control-label">Currency</label>
+				<%= f.text_field :currency, autofocus: true, class: "form-control" %>use (usd)
+				<span class="material-input"></span>
+			</div>
+
+			<div class="form-group label-floating">
+				<label class="control-label">Plan ID</label>
+				<%= f.text_field :stripe_id, autofocus: true, class: "form-control" %>silver (similar to name)
+				<span class="material-input"></span>
+			</div>
+
+
+			<div class="form-group">
+				<%= f.submit "Create plan", class:  "btn btn-primary" %>
+			</div>
+			<%end%>
+		</div>
+	</div>
+</div>
